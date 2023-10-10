@@ -7,28 +7,39 @@ type Props = {
   onClick?: () => void;
   children: React.ReactNode;
   navigateTo: string;
+  hasArrow?: boolean;
+  hasBackground?: boolean;
 };
 
-const Button = ({ children, className, onClick, navigateTo }: Props) => {
+const Button = ({
+  children,
+  className,
+  onClick,
+  navigateTo,
+  hasArrow = false,
+  hasBackground = false,
+}: Props) => {
   const navigate = useNavigate();
 
   return (
     <button
-      className={`max-w-fit flex text-left rounded-[10px] cursor-pointer ${className} text-sm uppercase font-light bg-transparent border-[1px] border-main text-main py-10 px-20`}
+      className={`max-w-fit max-h-fit flex items-center justify-center text-left rounded-30 cursor-pointer text-sm uppercase py-10 px-20 gap-20
+      ${className}
+      ${
+        hasBackground
+          ? "bg-main text-black border-none"
+          : "bg-transparent border-[1px] border-main text-main"
+      }
+      `}
       onClick={() => {
         onClick && onClick();
         navigateToPage(navigate, navigateTo);
       }}
-      //  ref={container}
-      //  onMouseEnter={() => {
-      //    tl.current.play();
-      //  }}
-      //  onMouseLeave={() => {
-      //    tl.current.reverse();
-      //  }}
-      //  type={type}
     >
       {children}
+      {hasArrow && (
+        <span className="material-symbols-outlined">trending_up</span>
+      )}
     </button>
   );
 };

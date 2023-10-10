@@ -11,5 +11,33 @@ body,
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  @apply text-black;
+  @apply text-white;
+  @apply bg-black;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* Cases macbook */
+@media screen and (max-width: 900px) {
+  .right {
+    display: none;
+  }
+
+  .desktopPhotos {
+    display: none;
+  }
+
+  .mobileContent {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
 }

@@ -22,7 +22,7 @@ const Card = ({
       className={`px-mobile md:px-tablet lg:px-desktop py-desktop relative ${className} overflow-hidden flex flex-col lg:flex-row gap-50 bg-white justify-end items-center lg:items-end`}
     >
       <div
-        className={`w-full md:w-[70%] h-full flex flex-col gap-100 p-tablet border-[1px] border-gray rounded-10 
+        className={`w-full md:w-[70%] h-full flex flex-col gap-100 p-tablet border-[1px] border-gray rounded-20 
         ${!leftText ? "order-2 lg:order-2" : "order-2 lg:order-1"}
       }`}
       >

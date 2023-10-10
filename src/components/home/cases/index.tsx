@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import DesktopContentSection from "./desktop/DesktopContentSection";
 import macbook_model from "../../../assets/macbook_model.png";
-import gsap from "gsap";
+import gsap, { Expo } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import DesktopPhoto from "./desktop/DesktopPhoto";
 gsap.registerPlugin(ScrollTrigger);
@@ -19,6 +19,7 @@ const Cases = () => {
       const animation = gsap.to(images, {
         yPercent: 0,
         stagger: 0.5,
+        ease: Expo.easeOut,
       });
 
       mm.add("(min-width: 900px)", () => {
@@ -28,7 +29,7 @@ const Cases = () => {
           end: "bottom bottom",
           pin: ".left",
           animation: animation,
-          scrub: true,
+          scrub: 2,
         });
       });
     }, container);

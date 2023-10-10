@@ -1,10 +1,17 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  background: string;
+};
 
-const ScrollView = (props: Props) => {
+const ScrollView = ({ background }: Props) => {
   return (
-    <div className="w-[100vw] h-view bg-green-300 border-[1px] border-main"></div>
+    <div
+      className="w-[100vw] h-view"
+      style={{
+        background,
+      }}
+    ></div>
   );
 };
 

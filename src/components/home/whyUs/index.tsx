@@ -1,12 +1,13 @@
 import { useLayoutEffect, useRef } from "react";
 import Section from "../../custom/section";
-import gsap from "gsap";
+import gsap, { Expo } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Observer } from "gsap/all";
 import Title from "../../custom/title";
-import Button from "../../custom/button";
-import transparency from "../../../assets/transparency.png";
-import Text from "../../custom/text";
+import Card from "./Card";
+import { colors } from "../../../utils/constants";
+import black_why_us2 from "../../../assets/black_why_us2.png";
+import white_why_us1 from "../../../assets/white_why_us1.png";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 
@@ -16,7 +17,7 @@ const WhyUs = () => {
   useLayoutEffect(() => {
     const cards: HTMLDivElement[] = gsap.utils.toArray(".card");
     const spacer = 60;
-    const minScale = 0.9;
+    const minScale = 0.85;
 
     const distributor = gsap.utils.distribute({ base: minScale, amount: 0.1 });
 
@@ -29,11 +30,10 @@ const WhyUs = () => {
           scrollTrigger: {
             trigger: card,
             start: `top top`,
-            scrub: true,
-            // markers: true,
+            scrub: 2.5,
             invalidateOnRefresh: true,
           },
-          ease: "none",
+          ease: Expo.easeOut,
           scale: scaleVal,
         });
 
@@ -44,7 +44,6 @@ const WhyUs = () => {
           end: `bottom top+=${150 + cards.length * spacer}`,
           pin: true,
           pinSpacing: false,
-          // markers: index === 0 ? true : false,
           id: "pin",
           invalidateOnRefresh: true,
         });
@@ -53,6 +52,9 @@ const WhyUs = () => {
 
     return () => ctx.revert();
   }, []);
+
+  const white = colors.white;
+  const black = colors.black;
 
   return (
     <div ref={container}>
@@ -65,31 +67,36 @@ const WhyUs = () => {
           ¿Por qué escogernos?
         </Title>
         {/* Cards */}
-        <div className="relative w-full h-full cards">
-          <div className="h-[80vh] w-full bg-red-300 card rounded-30"></div>
-          <div className="h-[80vh] w-full bg-green-400 card rounded-30"></div>
-          <div className="h-[80vh] w-full bg-blue-300 card rounded-30"></div>
-          <div className="h-[80vh] w-full bg-orange-300 card rounded-30"></div>
-          <div className="h-auto w-full bg-[#000] card rounded-30 p-50 flex flex-col gap-100 justify-start z-[999] relative py-100">
-            <div className="flex flex-col gap-30">
-              <Title className="font-black text-white">
-                Estrategia comprobada
-              </Title>
-              <Text className="text-white w-[50%]">
-                Mantenemos una política de total transparencia, proporcionando a
-                los clientes información clara sobre su inversión y resultados.
-                Mantenemos una política de total transparencia, proporcionando a
-                los clientes información clara sobre su inversión y resultados.
-              </Text>
-            </div>
-            <Button navigateTo="/" hasBackground hasArrow>
-              Empezar a generar
-            </Button>
-
-            <div className="absolute bottom-0 right-0 w-[40%] h-auto px-100">
-              <img src={transparency} />
-            </div>
-          </div>
+        <div className="relative flex flex-col w-full h-full cards gap-100">
+          <Card
+            backgroundColor={white}
+            textColor={black}
+            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
+            title="Estratégia comprobada"
+            image={white_why_us1}
+          />
+          <Card
+            backgroundColor="#000"
+            textColor={white}
+            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
+            title="Estratégia comprobada"
+            image={black_why_us2}
+          />
+          <Card
+            backgroundColor={white}
+            textColor={black}
+            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
+            title="Estratégia comprobada"
+            image={white_why_us1}
+          />
+          <Card
+            backgroundColor="#000"
+            textColor={white}
+            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
+            title="Estratégia comprobada"
+            image={black_why_us2}
+            className="lg:z-[100]"
+          />
         </div>
       </Section>
     </div>

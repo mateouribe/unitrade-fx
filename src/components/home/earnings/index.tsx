@@ -14,7 +14,10 @@ const Earnings = () => {
 
   return (
     <div ref={container}>
-      <Divider className="relative bg-white py-[150px] md:py-100">
+      <Divider
+        className="relative bg-white py-[100px] px-mobile md:px-tablet lg:px-desktop"
+        noPadding
+      >
         <div className="w-full md:w-[70%] h-full flex flex-col gap-100 ">
           <div className="flex flex-col w-full gap-40">
             <Title className="font-normal z-[10]">

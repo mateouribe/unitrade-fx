@@ -1,7 +1,8 @@
 import { useLayoutEffect, useRef } from "react";
-import ScrollView from "./ScrollView";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import ScrollView from "./ScrollView";
+import { colors } from "../../../utils/constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const Brokers = () => {
@@ -45,10 +46,10 @@ const Brokers = () => {
           className="w-[400vw] h-view lg:flex flex-row relative hidden"
           ref={desktopContainer}
         >
-          <ScrollView />
-          <ScrollView />
-          <ScrollView />
-          <ScrollView />
+          <ScrollView background={colors.axi} />
+          <ScrollView background={colors.black} />
+          <ScrollView background={colors.mql5} />
+          <ScrollView background={colors.main} />
         </div>
       </div>
     </section>

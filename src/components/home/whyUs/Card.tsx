@@ -1,4 +1,3 @@
-import React from "react";
 import Text from "../../custom/text";
 import Button from "../../custom/button";
 
@@ -30,7 +29,7 @@ const Card = ({
       <div className="w-full lg:w-[60%] min-h-[50vh] p-mobile md:p-tablet lg:p-desktop flex flex-col justify-between">
         <div className="flex flex-col gap-30">
           <h4
-            className="text-[26px] md:text-[30px] lg:text-[36px] text-left"
+            className="text-[30px] md:text-[35px] lg:text-[45px] text-left font-medium"
             style={{
               color: textColor,
             }}
@@ -41,6 +40,7 @@ const Card = ({
             style={{
               color: textColor,
             }}
+            className="text-[18px]"
           >
             {description}
           </Text>

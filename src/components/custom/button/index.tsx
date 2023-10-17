@@ -9,6 +9,8 @@ type Props = {
   navigateTo: string;
   hasArrow?: boolean;
   hasBackground?: boolean;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 const Button = ({
@@ -18,6 +20,8 @@ const Button = ({
   navigateTo,
   hasArrow = false,
   hasBackground = false,
+  onMouseEnter,
+  onMouseLeave,
 }: Props) => {
   const navigate = useNavigate();
 
@@ -35,6 +39,8 @@ const Button = ({
         onClick && onClick();
         navigateToPage(navigate, navigateTo);
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
       {hasArrow && (

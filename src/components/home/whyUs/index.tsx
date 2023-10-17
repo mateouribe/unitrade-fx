@@ -71,15 +71,15 @@ const WhyUs = () => {
           <Card
             backgroundColor={white}
             textColor={black}
-            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
-            title="Estratégia comprobada"
+            description="Priorizamos la seguridad de los fondos de nuestros clientes con medidas robustas de protección y gestión de riesgos."
+            title="Seguridad y gestión financiera"
             image={white_why_us1}
           />
           <Card
             backgroundColor="#000"
             textColor={white}
-            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
-            title="Estratégia comprobada"
+            description="Mantenemos una política de total transparencia, proporcionando a los clientes información clara sobre su inversión y resultados."
+            title="Transparencia y confianza"
             image={black_why_us2}
           />
           <Card
@@ -92,8 +92,8 @@ const WhyUs = () => {
           <Card
             backgroundColor="#000"
             textColor={white}
-            description="Nuestra estrategia de SmartMoney ha demostrado ser efectiva en la generación de ganancias de manera constante."
-            title="Estratégia comprobada"
+            description="Priorizamos la seguridad de los fondos de nuestros clientes con medidas robustas de protección y gestión de riesgos."
+            title="Seguridad y gestión financiera"
             image={black_why_us2}
             className="lg:z-[100]"
           />

@@ -80,10 +80,10 @@ const Navbar = () => {
         </Link>
         <li className="flex gap-30">
           <ul className="flex items-center w-full text-sm text-white gap-30">
-            <Link route="/" className="desktopItem">
+            <Link route="/" className="desktopItem" underline>
               Home
             </Link>
-            <Link route="/our-brokers" className="desktopItem">
+            <Link route="/our-brokers" className="desktopItem" underline>
               Brokers
             </Link>
             <Link route="/" className="desktopItem">
